@@ -14,7 +14,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DLAF_BACKEND=skia -DSKIA_DIR=C:/skia -DSKIA_LIBRARY_DIR=C:/skia/out/Release-x64 -DSKIA_LIBRARY=C:/skia/out/Release-x64/skia.lib -G Ninja ..
+          cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DLAF_BACKEND=skia -DSKIA_DIR=C:/skia -DSKIA_LIBRARY_DIR=C:/skia/out/Release-x64 -DSKIA_LIBRARY=C:/skia/out/Release-x64/skia.lib -G Ninja D:\a\aseprite\aseprite
           ninja aseprite
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
