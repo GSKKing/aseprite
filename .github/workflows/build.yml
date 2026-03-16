@@ -9,18 +9,19 @@ jobs:
       - name: Download Skia
         run: |
           curl -L https://github.com/aseprite/skia/releases/latest/download/Skia-Windows-Release-x64.zip -o skia.zip
-          7z x skia.zip -o skia
-          ls -R skia   # 调试用，查看目录结构
+          # 7z x skia.zip -o skia
+          unzip skia.zip -d skia
+          # ls -R skia   # 调试用，查看目录结构
       - name: Configure and Build
         run: |
           mkdir build
           cd build
-          cmake
+          cmake -S .
           -DCMAKE_BUILD_TYPE=RelWithDebInfo 
           -DLAF_BACKEND=skia 
-          -DSKIA_DIR=./skia 
-          -DSKIA_LIBRARY_DIR=./skia/out/Release-x64 
-          -DSKIA_LIBRARY=./skia/out/Release-x64/skia.lib 
+          -DSKIA_DIR=${{ github.workspace }}\skia 
+          -DSKIA_LIBRARY_DIR=${{ github.workspace }}\skia\out\Release-x64 
+          -DSKIA_LIBRARY=${{ github.workspace }}\skia\out\Release-x64\skia.lib 
           -G Ninja
           ninja aseprite
       - name: Upload Artifact
