@@ -16,7 +16,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -S .
+          cmake
           -DCMAKE_BUILD_TYPE=RelWithDebInfo 
           -DLAF_BACKEND=skia 
           -DSKIA_DIR=${{ github.workspace }}\skia 
