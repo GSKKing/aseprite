@@ -9,7 +9,7 @@ jobs:
       - name: Download Skia
         run: |
           curl -L https://github.com/aseprite/skia/releases/latest/download/Skia-Windows-Release-x64.zip -o skia.zip
-          7z x skia.zip -o./skia
+          7z x skia.zip -o skia
           ls -R skia   # 调试用，查看目录结构
       - name: Configure and Build
         run: |
