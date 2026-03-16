@@ -8,7 +8,7 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1   # 安装 MSVC 编译器
       - name: Download Skia
         run: |
-          curl -L https://github.com/aseprite/skia/releases/latest/download/Skia-Windows-Release-x64.zip -o skia.zip
+          curl -L https://github.com/aseprite/skia/releases/latest/download/m124-08a5439a6b/Skia-Windows-Release-x64.zip -o skia.zip
           7z x skia.zip -oC:\skia
           ls -R skia   # 调试用，查看目录结构
       - name: Configure and Build
